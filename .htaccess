@@ -1,0 +1,11 @@
+RewriteEngine On
+
+# Redirect all requests from example.com/some-page.html to example.com/some-page
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.+)\.html$ /$1 [L,R=301]
+
+# Internally rewrite requests from example.com/some-page to some-page.html
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+)$ $1.html [L]
+

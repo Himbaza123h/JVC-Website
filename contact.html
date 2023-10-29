@@ -5,12 +5,12 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Contact - JVC Engineering Ltd</title>
+  <title>Contact - JVC Engineering Group</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/logo.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
@@ -76,7 +76,7 @@
       <div class="container">
 
         <div>
-          <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" allowfullscreen></iframe>
+           <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d255197.24161012282!2d29.736699645095374!3d-1.9713744712135572!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dca5a587d7a5dd%3A0x732077ad7d5b38b6!2sNyarugenge%2C%20Kigali!5e0!3m2!1sen!2srw!4v1698531915418!5m2!1sen!2srw" frameborder="0" allowfullscreen></iframe>
         </div>
 
         <div class="row mt-5">
@@ -84,21 +84,21 @@
           <div class="col-lg-4">
             <div class="info">
               <div class="address">
-                <i class="bi bi-geo-alt"></i>
+                <a href="https://maps.app.goo.gl/Lr2Qd9SX5wMqLJ8M8"><i class="bi bi-geo-alt"></i></a>
                 <h4>Location:</h4>
-                <p>Nyarugenge Street, New York, NY 535022</p>
+                <p>Kigali, Nyarugenge</p>
               </div>
 
               <div class="email">
-                <i class="bi bi-envelope"></i>
+                <a href="mailto:jvcengineeringgroupltd@gmail.com"><i class="bi bi-envelope"></i></a>
                 <h4>Email:</h4>
-                <p>himbazaalain022@gmail.com</p>
+                <p>jvcengineeringgroupltd@gmail.com</p>
               </div>
 
               <div class="phone">
-                <i class="bi bi-phone"></i>
+                <a href="tel:+250 786 663 517"><i class="bi bi-phone"></i></a>
                 <h4>Call:</h4>
-                <p>+250 782 179 022s</p>
+                <p>+250 786 663 517</p>
               </div>
 
             </div>
@@ -107,7 +107,7 @@
 
           <div class="col-lg-8 mt-5 mt-lg-0">
 
-            <form action="" method="post" role="form" class="php-email-form">
+            <form name="submit-to-google-sheet" method="post" role="form" class="php-email-form">
               <div class="row">
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
@@ -122,16 +122,31 @@
               <div class="form-group mt-3">
                 <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
               </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
               <div class="text-center"><button type="submit">Send Message</button></div>
+              <span id="mesaje"></span>
             </form>
 
           </div>
 
+          <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbxO87OXxvp_elZf6id8wVc8lno5YR8UsBXCRX9RV4ILGBpqINrnFWl-aUsR-tF3xC8znA/exec'
+            const form = document.forms['submit-to-google-sheet']
+          const msj = document.getElementById("mesaje")
+          form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+              .then(response => {
+                msj.innerHTML="Submitted successfully"
+                setTimeout(
+                  function(){
+                    msj.innerHTML=""  
+                  },
+                5000)
+                form.reset()
+              })
+             .catch(error => console.error('Error!', error.message))
+})
+          </script>
         </div>
 
       </div>
@@ -139,7 +154,7 @@
 
   </main><!-- End #main -->
 
-  <!-- ======= Footer ======= -->
+    <!-- ======= Footer ======= -->
   <footer id="footer">
     <div class="footer-top">
       <div class="container">
@@ -147,12 +162,9 @@
 
           <div class="col-lg-3 col-md-6">
             <div class="footer-info">
-              <h3>Honore</h3>
-              <p>
-                Nyarugenge Street <br>
-                KN 118 , Rwanda<br><br>
-                <strong>Phone:</strong> +250 782 179 022<br>
-                <strong>Email:</strong> himbazaalain022@gmail.com<br>
+              <h4>JVC Engineering Group Ltd</h4>
+              <p>Based in the vibrant city of Kigali, we are your trusted partners in the world of construction.</p>
+                <p>At JVC, we've been shaping Kigali's skyline and our commitment to excellence runs deep.</p>
               </p>
             </div>
           </div>
@@ -170,22 +182,22 @@
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Our Services</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="services.html">Engineering Construction</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="services.html">Land Surveying</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="services.html">Estimation</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="services.html">Project Supervision & Consultation</a></li>
             </ul>
           </div>
 
           <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
-            <p>Tamen quem nulla quae legam multos aute sint culpa</p>
+            <h4>Our Address</h4>
+            <p><a href="https://maps.app.goo.gl/Lr2Qd9SX5wMqLJ8M8"><i class="bx bx-map"></i></a>Kigali, Nyarugenge</p>
+            <p><a href="tel:+250781649555"><i class="bx bx-phone"></i></a>+250 781 649 555 &nbsp; <a href="tel:+250732607798"><i class="bx bx-phone"></i></a>+250 732 607 798</p>
               <div class="social-links mt-3">
-                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
                 <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="whatsapp"><i class="bx bxl-whatsapp"></i></a>
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
                 <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
                 <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
               </div>
           </div>
