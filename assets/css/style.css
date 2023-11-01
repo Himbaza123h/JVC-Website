@@ -121,14 +121,23 @@ h6 {
   #header.header-scrolled,
   #header .header-container {
     background: #d9232d;
+    height: 60px;
+    border-radius: 0;
   }
 
   #header .logo {
     padding-left: 0;
+    background: #d9232d;
+
   }
 
   #header .logo h1 {
     font-size: 24px;
+  }
+  #header .logo h1 span{
+    position: absolute;
+    left: 8vw;
+    top: 20px;
   }
 }
 
@@ -248,9 +257,11 @@ h6 {
 
 @media (max-width: 768px) {
 
-
-  .navbar>ul>li>a:before {
+.navbar>ul>li>a:before {
 display: none;
+}
+#header .header-container{
+  background:#d9232d;
 }
 }
 /**
@@ -320,10 +331,6 @@ display: none;
   color: #d9232d;
 }
 
-.navbar-mobile .getstarted,
-.navbar-mobile .getstarted:focus {
-  margin: 15px;
-}
 
 .navbar-mobile .dropdown ul {
   position: static;
@@ -491,24 +498,6 @@ display: none;
   background: #d9232d;
 }
 
-#hero .btn-get-started {
-  font-family: "Raleway", sans-serif;
-  font-weight: 500;
-  font-size: 14px;
-  letter-spacing: 1px;
-  display: inline-block;
-  padding: 14px 32px;
-  border-radius: 4px;
-  transition: 0.5s;
-  line-height: 1;
-  color: #fff;
-  animation-delay: 0.8s;
-  background: #d9232d;
-}
-
-#hero .btn-get-started:hover {
-  background: #df3740;
-}
 
 @media (max-width: 992px) {
   #hero {
@@ -661,13 +650,11 @@ section {
 }
 
 @media (max-width: 767px) {
-  /* line 40, ../../Arafath/CL/Cl November/226. Construction/HTML/scss/_bradcam.scss */
   .bradcam_area h3 {
     font-size: 30px;
   }
 }
 
-/* line 51, ../../Arafath/CL/Cl November/226. Construction/HTML/scss/_bradcam.scss */
 .bradcam_area p {
   font-size: 16px;
   color: #fff;
@@ -676,37 +663,14 @@ section {
   margin-bottom: 0;
 }
 
-/* line 57, ../../Arafath/CL/Cl November/226. Construction/HTML/scss/_bradcam.scss */
 .bradcam_area p a {
   color: #fff;
 }
 
-/* line 59, ../../Arafath/CL/Cl November/226. Construction/HTML/scss/_bradcam.scss */
 .bradcam_area p a:hover {
   color: #fff;
 }
 
-/* line 65, ../../Arafath/CL/Cl November/226. Construction/HTML/scss/_bradcam.scss */
-
-@media (max-width: 767px) {
-  /* line 65, ../../Arafath/CL/Cl November/226. Construction/HTML/scss/_bradcam.scss */
-}
-
-/* line 72, ../../Arafath/CL/Cl November/226. Construction/HTML/scss/_bradcam.scss */
-
-/* line 77, ../../Arafath/CL/Cl November/226. Construction/HTML/scss/_bradcam.scss */
-
-@media (max-width: 767px) {
-  /* line 77, ../../Arafath/CL/Cl November/226. Construction/HTML/scss/_bradcam.scss */
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-  /* line 77, ../../Arafath/CL/Cl November/226. Construction/HTML/scss/_bradcam.scss */
-}
-
-@media (min-width: 992px) and (max-width: 1200px) {
-  /* line 77, ../../Arafath/CL/Cl November/226. Construction/HTML/scss/_bradcam.scss */
-}
 
 /*--------------------------------------------------------------
 # About Us Section
@@ -757,10 +721,37 @@ section {
   top: -3px;
   color: #008374;
 }
-
+.honore i{
+  position: absolute;
+  font-size: 20px;
+  left: 0;
+  top: -3px;
+  color: #008374;
+}
+.honore li{
+  padding: 0 0 10px 30px;
+  position: relative;
+}
 .about .content p:last-child {
   margin-bottom: 0;
 }
+.slider-container {
+  display: flex;
+  overflow: hidden;
+}
+
+.slider-container img {
+  flex: 0 0 100%;
+  max-width: 100%;
+  display: none;
+}
+
+.slider-container img:first-child {
+  display: block;
+} 
+
+
+
 
 @keyframes pulsate-btn {
   0% {
@@ -895,34 +886,6 @@ section {
 .services .service-item:hover h3 {
   border-color: #008374;
 }
-
-
-/* Center the modal */
-/* Center the modal */
-.modal {
-  display: none;
-  position: absolute;
-  top: 200%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1;
-  width: 100%;
-  max-width: 300px; /* Adjust the max-width to fit your design */
-  padding: 20px;
-  border-radius: 10px;
-}
-
-.modal-content {
-  background-color: #fff;
-  border-radius: 10px;
-  padding: 20px;
-  text-align: center;
-}
-
-
-
-
-/* ----------------------------------------------------------- */
 
 
 /*--------------------------------------------------------------
@@ -1463,21 +1426,4 @@ text-decoration: none;
 #footer .copyright {
   text-align: center;
   padding-top: 30px;
-}
-
-#footer .credits {
-  padding-top: 10px;
-  text-align: center;
-  font-size: 13px;
-  color: rgba(255, 255, 255, 0.6);
-}
-
-#footer .credits a {
-  color: rgba(255, 255, 255, 0.6);
-  transition: 0.3s;
-  font-weight: 600;
-}
-
-#footer .credits a:hover {
-  color: white;
 }
