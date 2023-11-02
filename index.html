@@ -277,23 +277,14 @@
     <div class="row gy-4 justify-content-center align-items-center">
       <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
         <div class="member">
-          <!-- Your member content here -->
         </div>
       </div><!-- End Team Member -->
       
       <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
         <div class="member">
-          <!-- Your member content here -->
         </div>
       </div><!-- End Team Member -->
     </div>
-
-
-
-
-
-
-
     <!-- ======= Team Section ======= -->
         <section id="team" class="team section-bg">
           <div class="container">
@@ -361,7 +352,7 @@
 
           <div class="col-lg-4 col-md-6 footer-newsletter">
             <h4>Our Address</h4>
-            <p><a href="https://maps.app.goo.gl/HxGuDU74BRK2nzBZ6"><i class="bx bx-map"></i></a>Kigali, Nyarugenge</p>
+            <p><a href="https://maps.app.goo.gl/HxGuDU74BRK2nzBZ6"><i class="bx bx-map"></i></a>KN 2 Ave, Kigali</p>
             <p><a href="tel:+250781649555"><i class="bx bx-phone"></i></a>+250 781 649 555 &nbsp; <a href="tel:+250732607798"><i class="bx bx-phone"></i></a>+250 732 607 798</p>
               <div class="social-links mt-3">
                 <a href="https://web.facebook.com/profile.php?id=61553062705367" class="facebook"><i class="bx bxl-facebook"></i></a>
@@ -456,5 +447,36 @@ gtag('config', 'UA-23581568-13');
     showImage((currentImage - 1 + images.length) % images.length);
   }
 
+</script>
+
+<!-- Messenger Chat Plugin Code -->
+<div id="fb-root"></div>
+
+<!-- Your Chat Plugin code -->
+<div id="fb-customer-chat" class="fb-customerchat">
+</div>
+
+<script>
+  var chatbox = document.getElementById('fb-customer-chat');
+  chatbox.setAttribute("page_id", "164683340058592");
+  chatbox.setAttribute("attribution", "biz_inbox");
+</script>
+
+<!-- Your SDK code -->
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      xfbml            : true,
+      version          : 'v18.0'
+    });
+  };
+
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
 </script>
 
